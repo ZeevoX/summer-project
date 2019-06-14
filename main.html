@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sunrise and Sunset</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: avenir next;
+}
+
+header {
+  background-color: dimgrey;
+  padding: 10px;
+  text-align: center;
+  font-size: 70px;
+  color: white;
+}
+
+
+nav {
+  float: left;
+  width: 30%;
+  background: silver;
+  padding: 20px;
+  height: 300px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+data {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: gainsboro;
+  height: 300px;
+}
+
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  background-color: dimgrey;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  nav, data {
+    width: 100%;
+    height: auto;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <p>
+    <b>Data</b>
+  </p>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Sunrise and Sunset</a></li>
+      <li><a href="#">Weather</a></li>
+      <li><a href="#">Temperature</a></li>
+    </ul>
+  </nav>
+
+  <data>
+    <p>
+      <b>Sunrise and Sunset Times</b>
+      <br><br>
+      Sunrise: 6:24
+      <br>
+      Sunset: 20:31
+      <br><br>
+      <b>Graphs</b>
+    </p>
+  </data>
+</section>
+
+<footer>
+  <p>
+    Made by Timothy Langer and Cameron Soo
+  </p>
+</footer>
+
+</body>
+</html>
