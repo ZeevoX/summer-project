@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sunrise and Sunset</title>
+<title>Rainfall</title>
 <style>
 * {
   box-sizing: border-box;
@@ -26,7 +26,7 @@ nav {
   width: 30%;
   background: silver;
   padding: 20px;
-  height: 300px;
+  height: 400px;
 }
 
 nav ul {
@@ -39,7 +39,7 @@ data {
   padding: 20px;
   width: 70%;
   background-color: gainsboro;
-  height: 300px;
+  height: 400px;
 }
 
 section:after {
@@ -77,18 +77,18 @@ footer {
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">Sunrise and Sunset</a></li>
-      <li><a href="#">Weather</a></li>
+      <li><a href="#">Rainfall</a></li>
       <li><a href="#">Temperature</a></li>
     </ul>
   </nav>
 
   <data>
     <p>
-      <b>Sunrise and Sunset Times</b>
+      <b>Rainfall</b>
       <br><br>
-      Sunrise: 6:24
+      Maximum: <div id="value">70</div><div id="units">mm</div>
       <br>
-      Sunset: 20:31
+      Minimum: <div id="value">1</div><div id="units">mm</div>
       <br><br>
       <b>Graphs</b>
     </p>
