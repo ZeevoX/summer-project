@@ -87,9 +87,9 @@ footer {
     <p>
       <h3>Rainfall</h3>
       <div id="content">
-        Maximum: <div id="value" style="display: inline-block;">70</div><div id="units" style="display: inline-block;">mm</div>
+        Maximum: <div id="value1" style="display: inline-block;">70</div><div id="units1" style="display: inline-block;">mm</div>
         <br>
-        Minimum: <div id="value" style="display: inline-block;">1</div><div id="units" style="display: inline-block;">mm</div>
+        Minimum: <div id="value2" style="display: inline-block;">1</div><div id="units2" style="display: inline-block;">mm</div>
       </div>
       <h3>Graphs</h3>
     </p>
@@ -101,6 +101,15 @@ footer {
     Made by Timothy Langer and Cameron Soo
   </p>
 </footer>
-
+<script>
+var xmlHttp = new XMLHttpRequest();
+xmlHttp.open( "GET", "https://zeevox.net/summer-project/server/current.php", false );
+xmlHttp.send( null );
+let data = JSON.parse(xmlHttp.responseText);
+document.getElementById("value1").innerHTML = data["temp1"]["v"];
+document.getElementById("value2").innerHTML = data["fan1"]["v"];
+document.getElementById("units1").innerHTML = data["temp1"]["u"];
+document.getElementById("units2").innerHTML = data["fan1"]["u"];
+</script>
 </body>
 </html>
