@@ -9,6 +9,42 @@ body {
   font-weight: 400;
 }
 
+.parallax1 {
+  background-image: url("metofficegovuk heroMedium.jpg");
+  height: 300px;
+  float: right;
+  width: 79.5%;
+  border-radius: 25px 25px 25px 25px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax2 {
+  background-image: url("GettyImages-731855603-2ccc0f6.jpg");
+  height: 300px;
+  float: right;
+  width: 79.5%;
+  border-radius: 25px 25px 25px 25px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax3 {
+  background-image: url("2809_7241_heat-waves.jpg");
+  height: 300px;
+  float: right;
+  width: 79.5%;
+  border-radius: 25px 25px 25px 25px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 header1 {
   float: right;
   background-color: darkblue;
@@ -16,7 +52,7 @@ header1 {
   padding: 1px;
   text-align: center;
   font-size: 40px;
-  width: 69%;
+  width: 79.5%;
   color: white;
 }
 
@@ -27,7 +63,7 @@ header2 {
   padding: 1px;
   text-align: center;
   font-size: 40px;
-  width: 69%;
+  width: 79.5%;
   color: white;
 }
 
@@ -38,7 +74,7 @@ header3 {
   padding: 1px;
   text-align: center;
   font-size: 40px;
-  width: 69%;
+  width: 79.5%;
   color: white;
 }
 
@@ -48,10 +84,10 @@ ul {
   margin: 0;
   border-radius: 25px 25px 25px 25px;
   padding: 20px;
-  width: 30%;
+  width: 20%;
   background-color: silver;
   position: fixed;
-  height: 800px;
+  height: 100%;
   overflow: auto;
   font-size: 30px;
 }
@@ -77,7 +113,7 @@ data {
   float: right;
   padding: 20px;
   border-radius: 0px 0px 25px 25px;
-  width: 69%;
+  width: 79.5%;
   background-color: gainsboro;
   height: 400px;
 }
@@ -90,7 +126,7 @@ section:after {
 
 footer {
   float: right;
-  width: 69%;
+  width: 79.5%;
   background-color: dimgrey;
   border-radius: 25px 25px 25px 25px;
   padding: 10px;
