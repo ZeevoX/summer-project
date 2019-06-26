@@ -1,38 +1,83 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Product+Sans:100,300,400,500,700,900%7CProduct+Sans+Black');
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Product Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
-header {
-  background-color: dimgrey;
-  padding: 10px;
+header1 {
+  float: right;
+  background-color: darkblue;
+  border-radius: 25px 25px 0px 0px;
+  padding: 1px;
   text-align: center;
-  font-size: 70px;
+  font-size: 40px;
+  width: 69%;
   color: white;
 }
 
-
-nav {
-  float: left;
-  width: 30%;
-  background: silver;
-  padding: 20px;
-  height: 400px;
+header2 {
+  float: right;
+  background-color: dimgrey;
+  border-radius: 25px 25px 0px 0px;
+  padding: 1px;
+  text-align: center;
+  font-size: 40px;
+  width: 69%;
+  color: white;
 }
 
-nav ul {
+header3 {
+  float: right;
+  background-color: firebrick;
+  border-radius: 25px 25px 0px 0px;
+  padding: 1px;
+  text-align: center;
+  font-size: 40px;
+  width: 69%;
+  color: white;
+}
+
+ul {
   list-style-type: none;
-  padding: 0;
+  float: left;
+  margin: 0;
+  border-radius: 25px 25px 25px 25px;
+  padding: 20px;
+  width: 30%;
+  background-color: silver;
+  position: fixed;
+  height: 800px;
+  overflow: auto;
+  font-size: 30px;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
 }
 
 data {
-  float: left;
+  float: right;
   padding: 20px;
-  width: 70%;
+  border-radius: 0px 0px 25px 25px;
+  width: 69%;
   background-color: gainsboro;
   height: 400px;
 }
@@ -44,17 +89,13 @@ section:after {
 }
 
 footer {
+  float: right;
+  width: 69%;
   background-color: dimgrey;
+  border-radius: 25px 25px 25px 25px;
   padding: 10px;
   text-align: center;
   color: white;
-}
-
-@media (max-width: 600px) {
-  nav, data {
-    width: 100%;
-    height: auto;
-  }
 }
 
 .value, .units {
