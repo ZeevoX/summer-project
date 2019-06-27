@@ -52,7 +52,6 @@ header1 {
   background-color: darkblue;
   background-image: linear-gradient(to bottom right, darkblue, lightskyblue);
   border-radius: 25px 25px 0px 0px;
-  box-shadow: 10px 10px 5px grey;
   padding: 1px;
   text-align: center;
   font-size: 40px;
@@ -65,7 +64,6 @@ header2 {
   background-color: dimgrey;
   background-image: linear-gradient(to bottom left, dimgrey, lightgrey);
   border-radius: 25px 25px 0px 0px;
-  box-shadow: 10px 10px 5px grey;
   padding: 1px;
   text-align: center;
   font-size: 40px;
@@ -78,7 +76,6 @@ header3 {
   background-color: firebrick;
   background-image: linear-gradient(to bottom right, firebrick, orange);
   border-radius: 25px 25px 0px 0px;
-  box-shadow: 10px 10px 5px grey;
   padding: 1px;
   text-align: center;
   font-size: 40px;
@@ -124,7 +121,6 @@ data {
   width: 74%;
   background-color: grey;
   border-radius: 0px 0px 25px 25px;
-  box-shadow: 10px 10px 5px grey;
   height: 400px;
   color: white;
 }
@@ -184,7 +180,6 @@ footer {
     background-color: darkblue;
     background-image: linear-gradient(to bottom right, darkblue, lightskyblue);
     border-radius: 25px 25px 0px 0px;
-    box-shadow: 10px 10px 5px grey;
     padding: 1px;
     text-align: center;
     font-size: 40px;
@@ -197,7 +192,6 @@ footer {
     background-color: dimgrey;
     background-image: linear-gradient(to bottom left, dimgrey, lightgrey);
     border-radius: 25px 25px 0px 0px;
-    box-shadow: 10px 10px 5px grey;
     padding: 1px;
     text-align: center;
     font-size: 40px;
@@ -210,7 +204,6 @@ footer {
     background-color: firebrick;
     background-image: linear-gradient(to bottom right, firebrick, orange);
     border-radius: 25px 25px 0px 0px;
-    box-shadow: 10px 10px 5px grey;
     padding: 1px;
     text-align: center;
     font-size: 40px;
@@ -283,7 +276,6 @@ footer {
     width: 100%;
     background-color: grey;
     border-radius: 0px 0px 25px 25px;
-    box-shadow: 10px 10px 5px grey;
     height: 400px;
   }
 
