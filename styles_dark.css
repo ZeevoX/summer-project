@@ -89,7 +89,7 @@ ul {
   margin: 0;
   padding: 20px;
   width: 25%;
-  background-color: dimgrey;
+  background-color: #555;
   border-radius: 25px 25px 25px 25px;
   position: fixed;
   height: 98%;
@@ -220,7 +220,7 @@ footer {
     width: 95.7%;
     height: 10%;
     border-radius: 25px 25px 25px 25px;
-    background-color: dimgrey;
+    background-color: #555;
     position: fixed;
     overflow: auto;
     font-size: 30px;
