@@ -225,7 +225,7 @@ footer {
     height: 10%;
     border-radius: 25px 25px 25px 25px;
     position: fixed;
-    overflow: hidden;
+    overflow: auto;
     font-size: 30px;
   }
 
