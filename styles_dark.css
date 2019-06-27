@@ -222,7 +222,7 @@ footer {
     border-radius: 25px 25px 25px 25px;
     background-color: dimgrey;
     position: fixed;
-    overflow: hidden;
+    overflow: auto;
     font-size: 30px;
     color: white;
   }
