@@ -15,7 +15,7 @@ body {
 }
 
 .parallax1 {
-  background-image: url("metofficegovuk heroMedium.jpg");
+  background-image: url("https://www.publicdomainpictures.net/pictures/160000/velka/gouttes-de-pluie-1456095881M4S.jpg");
   height: 33.3%;
   float: right;
   width: 74%;
@@ -37,7 +37,7 @@ body {
 }
 
 .parallax3 {
-  background-image: url("2809_7241_heat-waves.jpg");
+  background-image: url("https://c.pxhere.com/photos/05/15/color_red_yellow_macro_close_up_color_image_horizontal_backgrounds-1180404.jpg!d");
   height:33.3%;
   float: right;
   width: 74%;
@@ -98,6 +98,14 @@ ul {
   color: white;
 }
 
+a:link {
+  color: white;
+}
+
+#footer_link {
+  color: yellow;
+}
+
 li a {
   display: block;
   color: white;
@@ -138,12 +146,11 @@ footer {
   border-radius: 25px 25px 25px 25px;
   padding: 10px;
   text-align: center;
-  color: white;
 }
 
 @media screen and (max-width:767px) {
   .parallax1 {
-    background-image: url("metofficegovuk heroMedium.jpg");
+    background-image: url("https://www.publicdomainpictures.net/pictures/160000/velka/gouttes-de-pluie-1456095881M4S.jpg");
     height: 33.3%;
     float: center;
     width: 100%;
@@ -165,7 +172,7 @@ footer {
   }
 
   .parallax3 {
-    background-image: url("2809_7241_heat-waves.jpg");
+    background-image: url("https://c.pxhere.com/photos/05/15/color_red_yellow_macro_close_up_color_image_horizontal_backgrounds-1180404.jpg!d");
     height:33.3%;
     float: center;
     width: 100%;
@@ -225,6 +232,14 @@ footer {
     overflow: auto;
     font-size: 30px;
     color: white;
+  }
+
+  a:link {
+    color: white;
+  }
+
+  #footer_link {
+    color: yellow;
   }
 
   li {
@@ -299,4 +314,3 @@ footer {
 .value, .units {
   display: inline-block;
 }
-
