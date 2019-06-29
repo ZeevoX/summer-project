@@ -1,59 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rainfall</title>
+        <title>Humidity</title>
         <link rel="stylesheet" href="styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body id="body" class="light-mode">
         <nav>
-            <ul class="light-mode">
+            <ul class="card light-mode">
                 <p>
-                    <b>Menu</b>
+                    <h3>Computer Gallery</h3>
+                    <b>Sensors</b>
                 </p>
-                <li><a href="#rainfall">Rainfall</a></li>
-                <li><a href="#pressure">Pressure</a></li>
-                <li><a href="#temperature">Temperature</a></li>
+                <li><a href="#temperature">Temperature&nbsp;🌡️</a></li>
+                <li><a href="#humidity">Humidity&nbsp;💧</a></li>
+                <li><a href="#pressure">Pressure&nbsp;⛰️</a></li>
                 <p>
                     <b>Themes</b>
                 </p>
                 <li>
-                    <button type="button" onclick="toggleDarkLight()" title="Toggle dark mode">🌛 Toggle dark mode</button>
+                    <button type="button" onclick="toggleDarkLight()" title="Toggle dark mode">Toggle dark mode&nbsp;🌛</button>
                 </li>
             </ul>
         </nav>
-        <section id="rainfall">
-            <div class="header_div parallax light-mode" id="header1">
-                <h1>Rainfall</h1>
-            </div>
-            <div class="data light-mode">
-                <div id="content">
-                    Maximum: <div id="value1" style="display: inline-block;">70</div>
-                    <div id="units1" style="display: inline-block;">mm</div>
-                    <br>
-                    Minimum: <div id="value2" style="display: inline-block;">1</div>
-                    <div id="units2" style="display: inline-block;">mm</div>
-                </div>
-                <h3>Graphs</h3>
-            </div>
-        </section>
-        <section id="pressure">
-            <div class="header_div parallax light-mode" id="header2">
-                <h1>Pressure</h1>
-            </div>
-            <div class="data light-mode">
-                <div id="content">
-                    Maximum: <div id="value1" style="display: inline-block;">70</div>
-                    <div id="units1" style="display: inline-block;">mm</div>
-                    <br>
-                    Minimum: <div id="value2" style="display: inline-block;">1</div>
-                    <div id="units2" style="display: inline-block;">mm</div>
-                </div>
-                <h3>Graphs</h3>
-            </div>
-        </section>
-        <section id="temperature">
-            <div class="header_div parallax light-mode" id="header3">
+        <section class="card light-mode" id="temperature">
+            <div class="header_div parallax light-mode" id="header_temp">
                 <h1>Temperature</h1>
             </div>
             <div class="data light-mode">
@@ -67,7 +38,38 @@
                 <h3>Graphs</h3>
             </div>
         </section>
-        <footer>
+        <section class="card light-mode" id="humidity">
+            <div class="header_div parallax light-mode" id="header_humidity">
+                <div class="overlay light-theme"></div>
+                <h1>Humidity</h1>
+            </div>
+            <div class="data light-mode">
+                <div id="content">
+                    Maximum: <div id="value1" style="display: inline-block;">70</div>
+                    <div id="units1" style="display: inline-block;">mm</div>
+                    <br>
+                    Minimum: <div id="value2" style="display: inline-block;">1</div>
+                    <div id="units2" style="display: inline-block;">mm</div>
+                </div>
+                <h3>Graphs</h3>
+            </div>
+        </section>
+        <section class="card light-mode" id="pressure">
+            <div class="header_div parallax light-mode" id="header_pressure">
+                <h1>Pressure</h1>
+            </div>
+            <div class="data light-mode">
+                <div id="content">
+                    Maximum: <div id="value1" style="display: inline-block;">70</div>
+                    <div id="units1" style="display: inline-block;">mm</div>
+                    <br>
+                    Minimum: <div id="value2" style="display: inline-block;">1</div>
+                    <div id="units2" style="display: inline-block;">mm</div>
+                </div>
+                <h3>Graphs</h3>
+            </div>
+        </section>
+        <footer class="light-mode card">
             <p>
                 Made by Timothy Langer and Cameron Soo. <a id="footer_link" href="https://github.com/ZeevoX/summer-project">View it on Github.</a>
             </p>

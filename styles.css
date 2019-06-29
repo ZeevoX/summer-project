@@ -7,11 +7,12 @@ body, html {
   height: 100%;
 }
 
-body {
+body, button {
   font-family: 'Product Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+  transition: all 0.3s;
 }
 
 body.light-mode {
@@ -22,58 +23,8 @@ body.dark-mode {
   background-color: black;
 }
 
-.parallax {
-  height: 35%;
-  float: center;
-  width: 74%;
-  float: right;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#header1 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Raindrops_%28232823269%29.jpg/1280px-Raindrops_%28232823269%29.jpg");
-}
-
-#header2 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/ISS-34_Stratocumulus_clouds.jpg/1280px-ISS-34_Stratocumulus_clouds.jpg");
-}
-
-#header3 {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Desert_Dunes.jpg/1280px-Desert_Dunes.jpg");
-}
-
-h1 {
-  font-size: 8vw;
-}
-
-.header_div {
-  float: right;
-  border-radius: 25px 25px 0px 0px;
-  padding: 1px;
-  text-align: center;
-  width: 74%;
-  color: white;
-}
-
-.header_div.light-mode {
-  border: 2px solid black;
-  border-bottom: 0px;
-}
-
-.header_div.dark-mode {
-  border: 2px solid white;
-  border-bottom: 0px;
-}
-
 a:link {
   color: white;
-}
-
-#footer_link {
-  color: yellow;
 }
 
 ul {
@@ -82,83 +33,138 @@ ul {
   margin: 0;
   padding: 20px;
   width: 25%;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 16px 16px 16px 16px;
   position: fixed;
   height: 98%;
   overflow: auto;
   font-size: 30px;
+  transition: all 0.3s;
 }
 
 ul.light-mode {
-  background-color: silver;
+  background-color: #dddddd;
 }
 
 ul.dark-mode {
-  background-color: #555;
+  background-color: #272727;
   color: white;
 }
 
-li a {
+button {
+  font-size: 30px;
+  text-align: left;
+  width: 100%;
+  border: 0;
+}
+
+li a, button {
   display: block;
   padding: 8px 16px;
   text-decoration: none;
+  transition: all 0.3s;
 }
 
-li a.light-mode {
+li a.light-mode, button.light-mode {
   color: #000;
 }
 
-li a.light-mode:active {
+li a.light-mode:active, button.light-mode:active {
   color: black;
 }
 
-li a.light-mode:hover:not(.active) {
+li a.light-mode:hover:not(.active), button.light-mode:hover:not(.active) {
   background-color: #555;
   color: white;
 }
 
-li a.dark-mode {
+button.dark-mode {
+  background-color: #272727;
+  transition: all 0.3s;
+}
+
+li a.dark-mode, button.dark-mode {
   color: white;
 }
 
-li a.dark-mode:active {
+li a.dark-mode:hover, button.dark-mode:hover {
   background-color: #4CAF50;
   color: white;
 }
 
-li a.dark-mode:hover:not(.active) {
+li a.dark-mode:hover:not(.active), button.dark-mode:hover:not(.active) {
   background-color: silver;
   color: black;
 }
 
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#header_humidity {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Raindrops_%28232823269%29.jpg/1280px-Raindrops_%28232823269%29.jpg");
+}
+
+#header_pressure {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/ISS-34_Stratocumulus_clouds.jpg/1280px-ISS-34_Stratocumulus_clouds.jpg");
+}
+
+#header_temp {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Desert_Dunes.jpg/1280px-Desert_Dunes.jpg");
+}
+
+h1 {
+  font-size: 8vw;
+  padding: 1vw;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.header_div {
+  text-align: center;
+  border-radius: 16px 16px 0px 0px;
+  color: white;
+}
+
+/* Image dimming in dark mode */
+.header_div.dark-mode {
+  transition: all 0.3s;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
+}
+
 .data {
-  float: right;
+  border-radius: 0px 0px 16px 16px;
   padding: 20px;
-  margin-bottom: 20px;
-  width: 74%;
-  border-radius: 0px 0px 25px 25px;
   height: auto;
 }
 
 .data.light-mode {
-  background-color: gainsboro;
-  border: 2px solid black;
+  background-color: #eeeeee;
 }
 
 .data.dark-mode {
-  background-color: grey;
-  border: 2px solid white;
+  background-color: #353535;
   color: white;
 }
 
-.data.light-mode {
-  background-color: gainsboro;
-  box-shadow: 10px 10px 5px grey;
+.card {
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.data.dark-mode {
-  background-color: grey;
-  color: white;
+.card.light-mode {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card.light-mode:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+section {
+  border-radius: 16px 16px 16px 16px;
+  float: right;
+  margin-bottom: 20px;
 }
 
 section:after {
@@ -169,22 +175,36 @@ section:after {
 
 footer {
   float: right;
-  width: 74%;
-  color: white;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 16px 16px 16px 16px;
   margin-bottom: 10px;
   padding: 10px;
   text-align: center;
 }
 
 footer.light-mode {
-  background-color: dimgrey;
-  border: 2px solid black;
+  background: #dddddd;
+  color: black;
 }
 
 footer.dark-mode {
-  background-color:  #333333;
-  border: 2px solid white;
+  background: #212121;
+  color: white;
+}
+
+#footer_link {
+  transition: all 0.3s;
+}
+
+#footer_link.light-mode {
+  color: blue;
+}
+
+#footer_link.dark-mode {
+  color: yellow;
+}
+
+section, footer {
+  width: 74%;
 }
 
 /* Use a media query to add a breakpoint at 800px: */
@@ -193,37 +213,27 @@ footer.dark-mode {
     position: relative;
   }
 
-  .header_div, .parallax, ul, .data, footer {
+  section, ul, footer {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
 
 @media screen and (min-width: 1730px) {
-  #parallax1 {
+  h1 {
+    font-size: 6vw;
+    padding: 4vw;
+  }
+
+  #header_humidity {
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/fe/Raindrops_%28232823269%29.jpg");
   }
 
-  #header2 {
+  #header_pressure {
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/39/ISS-34_Stratocumulus_clouds.jpg");
   }
 
-  #header3 {
+  #header_temp {
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/Desert_Dunes.jpg");
-  }
-}
-
-footer.dark-mode {
-  background-color:  #333333;
-}
-
-/* Use a media query to add a breakpoint at 800px: */
-@media screen and (max-width: 800px) {
-  ul {
-    position: relative;
-  }
-
-  .header_div, .parallax, ul, .data, footer {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
 
