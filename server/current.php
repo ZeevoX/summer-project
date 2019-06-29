@@ -1,4 +1,5 @@
 <?php
+  header('Access-Control-Allow-Origin: *');
 	// Take sensor readings from lm-sensors and output
 	// this script returns JSON
 	// each sensor in the array has two properties:
