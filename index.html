@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rainfall</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body id="body" class="light-mode">
+        <nav>
+            <ul class="light-mode">
+                <p>
+                    <b>Menu</b>
+                </p>
+                <li><a href="#rainfall">Rainfall</a></li>
+                <li><a href="#pressure">Pressure</a></li>
+                <li><a href="#temperature">Temperature</a></li>
+                <p>
+                    <b>Themes</b>
+                </p>
+                <li>
+                    <button type="button" onclick="toggleDarkLight()" title="Toggle dark mode">🌛 Toggle dark mode</button>
+                </li>
+            </ul>
+        </nav>
+        <section id="rainfall">
+            <div class="header_div parallax light-mode" id="header1">
+                <h1>Rainfall</h1>
+            </div>
+            <div class="data light-mode">
+                <div id="content">
+                    Maximum: <div id="value1" style="display: inline-block;">70</div>
+                    <div id="units1" style="display: inline-block;">mm</div>
+                    <br>
+                    Minimum: <div id="value2" style="display: inline-block;">1</div>
+                    <div id="units2" style="display: inline-block;">mm</div>
+                </div>
+                <h3>Graphs</h3>
+            </div>
+        </section>
+        <section id="pressure">
+            <div class="header_div parallax light-mode" id="header2">
+                <h1>Pressure</h1>
+            </div>
+            <div class="data light-mode">
+                <div id="content">
+                    Maximum: <div id="value1" style="display: inline-block;">70</div>
+                    <div id="units1" style="display: inline-block;">mm</div>
+                    <br>
+                    Minimum: <div id="value2" style="display: inline-block;">1</div>
+                    <div id="units2" style="display: inline-block;">mm</div>
+                </div>
+                <h3>Graphs</h3>
+            </div>
+        </section>
+        <section id="temperature">
+            <div class="header_div parallax light-mode" id="header3">
+                <h1>Temperature</h1>
+            </div>
+            <div class="data light-mode">
+                <div id="content">
+                    Maximum: <div id="value1" style="display: inline-block;">70</div>
+                    <div id="units1" style="display: inline-block;">mm</div>
+                    <br>
+                    Minimum: <div id="value2" style="display: inline-block;">1</div>
+                    <div id="units2" style="display: inline-block;">mm</div>
+                </div>
+                <h3>Graphs</h3>
+            </div>
+        </section>
+        <footer>
+            <p>
+                Made by Timothy Langer and Cameron Soo. <a id="footer_link" href="https://github.com/ZeevoX/summer-project">View it on Github.</a>
+            </p>
+        </footer>
+        <script src="dark_mode.js"></script>
+        <script>
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "https://zeevox.net/summer-project/server/current.php", false);
+            xmlHttp.send(null);
+            let data = JSON.parse(xmlHttp.responseText);
+            document.getElementById("value1").innerHTML = data["temp1"]["v"];
+            document.getElementById("value2").innerHTML = data["fan1"]["v"];
+            document.getElementById("units1").innerHTML = data["temp1"]["u"];
+            document.getElementById("units2").innerHTML = data["fan1"]["u"];
+        </script>
+    </body>
+</html>

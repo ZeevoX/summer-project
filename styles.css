@@ -11,75 +11,69 @@ body {
   font-family: 'Product Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
+  font-size: 20px;
 }
 
-.parallax1 {
-  background-image: url("metofficegovuk heroMedium.jpg");
-  height: 33.3%;
-  float: right;
+body.light-mode {
+  background-color: white;
+}
+
+body.dark-mode {
+  background-color: black;
+}
+
+.parallax {
+  height: 35%;
+  float: center;
   width: 74%;
+  float: right;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.parallax2 {
-  background-image: url("GettyImages-731855603-2ccc0f6.jpg");
-  height: 33.3%;
-  float: right;
-  width: 74%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+#header1 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Raindrops_%28232823269%29.jpg/1280px-Raindrops_%28232823269%29.jpg");
 }
 
-.parallax3 {
-  background-image: url("2809_7241_heat-waves.jpg");
-  height:33.3%;
-  float: right;
-  width: 74%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+#header2 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/ISS-34_Stratocumulus_clouds.jpg/1280px-ISS-34_Stratocumulus_clouds.jpg");
 }
 
-header1 {
+#header3 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Desert_Dunes.jpg/1280px-Desert_Dunes.jpg");
+}
+
+h1 {
+  font-size: 8vw;
+}
+
+.header_div {
   float: right;
-  background-color: darkblue;
-  background-image: linear-gradient(to bottom right, darkblue, lightskyblue);
   border-radius: 25px 25px 0px 0px;
   padding: 1px;
   text-align: center;
-  font-size: 40px;
   width: 74%;
   color: white;
 }
 
-header2 {
-  float: right;
-  background-color: dimgrey;
-  background-image: linear-gradient(to bottom left, dimgrey, lightgrey);
-  border-radius: 25px 25px 0px 0px;
-  padding: 1px;
-  text-align: center;
-  font-size: 40px;
-  width: 74%;
+.header_div.light-mode {
+  border: 2px solid black;
+  border-bottom: 0px;
+}
+
+.header_div.dark-mode {
+  border: 2px solid white;
+  border-bottom: 0px;
+}
+
+a:link {
   color: white;
 }
 
-header3 {
-  float: right;
-  background-color: firebrick;
-  background-image: linear-gradient(to bottom right, firebrick, orange);
-  border-radius: 25px 25px 0px 0px;
-  padding: 1px;
-  text-align: center;
-  font-size: 40px;
-  width: 74%;
-  color: white;
+#footer_link {
+  color: yellow;
 }
 
 ul {
@@ -88,7 +82,6 @@ ul {
   margin: 0;
   padding: 20px;
   width: 25%;
-  background-color: silver;
   border-radius: 25px 25px 25px 25px;
   position: fixed;
   height: 98%;
@@ -96,30 +89,76 @@ ul {
   font-size: 30px;
 }
 
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
+ul.light-mode {
+  background-color: silver;
 }
 
-li a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-li a:hover:not(.active) {
+ul.dark-mode {
   background-color: #555;
   color: white;
 }
 
-data {
+li a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.light-mode {
+  color: #000;
+}
+
+li a.light-mode:active {
+  color: black;
+}
+
+li a.light-mode:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+li a.dark-mode {
+  color: white;
+}
+
+li a.dark-mode:active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a.dark-mode:hover:not(.active) {
+  background-color: silver;
+  color: black;
+}
+
+.data {
   float: right;
   padding: 20px;
+  margin-bottom: 20px;
   width: 74%;
-  background-color: gainsboro;
   border-radius: 0px 0px 25px 25px;
-  height: 400px;
+  height: auto;
+}
+
+.data.light-mode {
+  background-color: gainsboro;
+  border: 2px solid black;
+}
+
+.data.dark-mode {
+  background-color: grey;
+  border: 2px solid white;
+  color: white;
+}
+
+.data.light-mode {
+  background-color: gainsboro;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.data.dark-mode {
+  background-color: grey;
+  color: white;
 }
 
 section:after {
@@ -131,11 +170,61 @@ section:after {
 footer {
   float: right;
   width: 74%;
-  background-color: dimgrey;
+  color: white;
   border-radius: 25px 25px 25px 25px;
+  margin-bottom: 10px;
   padding: 10px;
   text-align: center;
-  color: white;
+}
+
+footer.light-mode {
+  background-color: dimgrey;
+  border: 2px solid black;
+}
+
+footer.dark-mode {
+  background-color:  #333333;
+  border: 2px solid white;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  ul {
+    position: relative;
+  }
+
+  .header_div, .parallax, ul, .data, footer {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+@media screen and (min-width: 1730px) {
+  #parallax1 {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/fe/Raindrops_%28232823269%29.jpg");
+  }
+
+  #header2 {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/39/ISS-34_Stratocumulus_clouds.jpg");
+  }
+
+  #header3 {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/Desert_Dunes.jpg");
+  }
+}
+
+footer.dark-mode {
+  background-color:  #333333;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  ul {
+    position: relative;
+  }
+
+  .header_div, .parallax, ul, .data, footer {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
 }
 
 .value, .units {
