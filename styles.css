@@ -140,7 +140,7 @@ li a.dark-mode:hover:not(.active) {
   color: black;
 }
 
-data {
+.data {
   float: right;
   padding: 20px;
   width: 74%;
@@ -148,12 +148,12 @@ data {
   height: 400px;
 }
 
-data.light-mode {
+.data.light-mode {
   background-color: gainsboro;
   box-shadow: 10px 10px 5px grey;
 }
 
-data.dark-mode {
+.data.dark-mode {
   background-color: grey;
   color: white;
 }
@@ -187,7 +187,7 @@ footer.dark-mode {
     position: relative;
   }
 
-  .header_div, .parallax, ul, data, footer {
+  .header_div, .parallax, ul, .data, footer {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
