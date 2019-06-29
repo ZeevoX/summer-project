@@ -1,38 +1,34 @@
 #!/usr/bin/python3
+import os
 import json
 import time
 import base64
 import requests
+from datetime import datetime
 
-# Set this to True if testing the code on a device without a sense hat
-DEBUG = False
+from sense_hat import SenseHat
+sense = SenseHat()
 
-if not DEBUG:
-    from sense_hat import SenseHat
-    sense = SenseHat()
+def getcputemp():
+    temp = os.popen("vcgencmd measure_temp").readline()
+    return float(temp[5:-3])
+
+def getroomtemp():
+    temp = sense.temp
+    return round(temp-(getcputemp()-temp)/2, 2)
 
 def getdata():
-    if not DEBUG:
-        return {"time": int(time.time()), "temp": {"v": sense.temp, "u": "\u00b0C"}, "humidity": {"v": sense.humidity, "u": "%"}, "pressure": {"v": sense.pressure, "u": "mmHg"}}
-    else:
-        return {"time": int(time.time()), "temp": {"v": 23.3563743, "u": "\u00b0C"}, "humidity": {"v": 64.7438325, "u": "%"}, "pressure": {"v": 1014.0276923, "u": "mmHg"}}
-
-#def record():
-#    with open('values.csv', 'a') as file:
-#        writer = csv.writer(file)
-#        if DEBUG:
-#            writer.writerow([int(time.time()), 23.3563743, 64.7438325, 1014.0276923])
-#        else:
-#            writer.writerow([int(time.time()), sense.temp, sense.humidity, sense.pressure])
-#    file.close()
+    return {"time": int(time.time()),
+            "temp": {"v": getroomtemp(), "u": "\u00b0C"},
+            "cpu_temp": {"v": getcputemp(), "u": "\u00b0C"},
+            "raw_temp": {"v": round(sense.temp, 2), "u": "\u00b0C"},
+            "humidity": {"v": round(sense.humidity, 2), "u": "%"},
+            "pressure": {"v": round(sense.pressure, 2), "u": "mmHg"}}
 
 def send(data):
     body = {"data": base64.encodestring(json.dumps(data).encode("utf-8"))}
     response = requests.post("https://zeevox.net/summer-project/server/post.php", params=body)
 
-
-while True:
-    send(getdata())
-    #record()
-    time.sleep(60)
-    print("tick", int(time.time()))
+send(getdata())
+print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'), "CPU Temp:", getcputemp(), "Room temp:", round(sense.temp, 2), "Calibrated room temp:", getroomtemp())
+sense.show_message(str(round(getroomtemp(), 1)) + "'C")
