@@ -151,6 +151,16 @@ li a.dark-mode:hover:not(.active) {
   color: white;
 }
 
+.data.light-mode {
+  background-color: gainsboro;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.data.dark-mode {
+  background-color: grey;
+  color: white;
+}
+
 section:after {
   content: "";
   display: table;
@@ -199,6 +209,21 @@ footer.dark-mode {
 
   #header3 {
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9a/Desert_Dunes.jpg");
+  }
+}
+
+footer.dark-mode {
+  background-color:  #333333;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  ul {
+    position: relative;
+  }
+
+  .header_div, .parallax, ul, .data, footer {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
 
