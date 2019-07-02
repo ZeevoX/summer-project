@@ -84,6 +84,12 @@
             document.getElementById("value2").innerHTML = data["fan1"]["v"];
             document.getElementById("units1").innerHTML = data["temp1"]["u"];
             document.getElementById("units2").innerHTML = data["fan1"]["u"];
+            if (pressure > 1009.144 and  pressure < 1022.689) {
+                weather = "Clear ☀️🌤️⛅🌥️🌦️🌧️⛈️";
+            } else if (pressure > 1022.689) {
+                weather = "Sunny ☀️";
+            } else if (pressure < 1009.144) {
+                weather = "Stormy ⛈️";
         </script>
     </body>
 </html>
