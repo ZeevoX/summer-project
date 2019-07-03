@@ -14,15 +14,29 @@
                         $exp = explode("_", str_replace(".csv", "", $name));
                         $last = array_pop($exp);                        // https://stackoverflow.com/a/16610896
                         $exp = array(implode('_', $exp), $last);
-                        //var_dump($exp);
+
+                        $csv = array_map('str_getcsv', file($fileinfo->getPathName()));
+                        $max_row = $csv[0];
+                        $min_row = $csv[0];
+                        foreach ($csv as $row) {
+                                if ($max_row[1] < $row[1]) {
+                                        $max_row = $row;
+                                }
+                                if ($min_row[1] > $row[1]) {
+                                        $min_row = $row;
+                                }
+                        }
+
                         $currentdata = str_getcsv(array_pop(file($fileinfo->getPathName())));
-                        //var_dump($currentdata);
                         $data[$exp[0]] = array(
                                 "v"=>$currentdata[1],
+                                "max"=>$max_row[1],
+                                "maxt"=>$max_row[0],
+                                "min"=>$min_row[1],
+                                "mint"=>$min_row[0],
                                 "u"=>$exp[1],
                                 "t"=>$currentdata[0]
                         );
-                        //var_dump($data[$exp[0]]);
                 }
         }
 
