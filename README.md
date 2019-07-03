@@ -1,4 +1,4 @@
-# 5CO summer project
+# 5CO Summer Project
 Our summer project is to collect hyperlocal data (temperature, humidity, pressure) using a Raspberry Pi, then displaying it on a website.
 
 ## Viewing
