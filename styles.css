@@ -66,6 +66,7 @@ li a, button {
 
 li a.light-mode, button.light-mode {
   color: #000;
+  background-color: #dddddd;
 }
 
 li a.light-mode:active, button.light-mode:active {
