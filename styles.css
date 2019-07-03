@@ -16,7 +16,7 @@ body, button {
 }
 
 body.light-mode {
-  background-color: white;
+  background-color: #dddddd;
 }
 
 body.dark-mode {
