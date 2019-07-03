@@ -20,15 +20,15 @@ function populate(name, v, u, t, row) {
   cell4.innerHTML = time.toLocaleDateString() + " " + time.toLocaleTimeString(undefined, { timeZoneName: 'short', hour: '2-digit', minute:'2-digit' });
 }
 
-populate("Temperature", data["temp"]["v"], data["temp"]["u"], data["temp"]["t"], temperature_table.insertRow(-1));
+populate("Current", data["temp"]["v"], data["temp"]["u"], data["temp"]["t"], temperature_table.insertRow(-1));
 populate("Maximum", data["temp"]["max"], data["temp"]["u"], data["temp"]["maxt"], temperature_table.insertRow(-1));
 populate("Minimum", data["temp"]["min"], data["temp"]["u"], data["temp"]["mint"], temperature_table.insertRow(-1));
 
-populate("Humidity", data["humidity"]["v"], data["temp"]["u"], data["temp"]["t"], humidity_table.insertRow(-1));
+populate("Current", data["humidity"]["v"], data["temp"]["u"], data["temp"]["t"], humidity_table.insertRow(-1));
 populate("Maximum", data["humidity"]["max"], data["temp"]["u"], data["temp"]["maxt"], humidity_table.insertRow(-1));
 populate("Minimum", data["humidity"]["min"], data["temp"]["u"], data["temp"]["mint"], humidity_table.insertRow(-1));
 
-populate("Pressure", data["pressure"]["v"], data["temp"]["u"], data["temp"]["t"], pressure_table.insertRow(-1));
+populate("Current", data["pressure"]["v"], data["temp"]["u"], data["temp"]["t"], pressure_table.insertRow(-1));
 populate("Maximum", data["pressure"]["max"], data["temp"]["u"], data["temp"]["maxt"], pressure_table.insertRow(-1));
 populate("Minimum", data["pressure"]["min"], data["temp"]["u"], data["temp"]["mint"], pressure_table.insertRow(-1));
 
