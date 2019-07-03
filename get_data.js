@@ -3,10 +3,6 @@ xmlHttp.open("GET", "https://zeevox.net/summer-project/server/get.php", false);
 xmlHttp.send(null);
 let data = JSON.parse(xmlHttp.responseText);
 
-let temperature_table = document.getElementById("temperature_table");
-let humidity_table = document.getElementById("humidity_table");
-let pressure_table = document.getElementById("pressure_table");
-
 function populate(name, v, u, t, row) {
   let cell1 = row.insertCell(-1);
   cell1.innerHTML = name
@@ -20,17 +16,19 @@ function populate(name, v, u, t, row) {
   cell4.innerHTML = time.toLocaleDateString() + " " + time.toLocaleTimeString(undefined, { timeZoneName: 'short', hour: '2-digit', minute:'2-digit' });
 }
 
-populate("Current", data["temp"]["v"], data["temp"]["u"], data["temp"]["t"], temperature_table.insertRow(-1));
-populate("Maximum", data["temp"]["max"], data["temp"]["u"], data["temp"]["maxt"], temperature_table.insertRow(-1));
-populate("Minimum", data["temp"]["min"], data["temp"]["u"], data["temp"]["mint"], temperature_table.insertRow(-1));
+function onedp(s) {
+  return parseFloat(s).toFixed(1);
+}
 
-populate("Current", data["humidity"]["v"], data["temp"]["u"], data["temp"]["t"], humidity_table.insertRow(-1));
-populate("Maximum", data["humidity"]["max"], data["temp"]["u"], data["temp"]["maxt"], humidity_table.insertRow(-1));
-populate("Minimum", data["humidity"]["min"], data["temp"]["u"], data["temp"]["mint"], humidity_table.insertRow(-1));
+function createTable(table, d) {
+  populate("Current",  onedp(d["v"]),  d["u"],  d["t"], table.insertRow(-1));
+  populate("Maximum",  onedp(d["max"]),  d["u"],  d["maxt"], table.insertRow(-1));
+  populate("Minimum",  onedp(d["min"]),  d["u"],  d["mint"], table.insertRow(-1));
+}
 
-populate("Current", data["pressure"]["v"], data["temp"]["u"], data["temp"]["t"], pressure_table.insertRow(-1));
-populate("Maximum", data["pressure"]["max"], data["temp"]["u"], data["temp"]["maxt"], pressure_table.insertRow(-1));
-populate("Minimum", data["pressure"]["min"], data["temp"]["u"], data["temp"]["mint"], pressure_table.insertRow(-1));
+createTable(document.getElementById("temperature_table"), data["temp"]);
+createTable(document.getElementById("humidity_table"), data["humidity"]);
+createTable(document.getElementById("pressure_table"), data["pressure"]);
 
 let genie = document.getElementById("weather_genie");
 var weather = "unknown";
