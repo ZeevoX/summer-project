@@ -10,6 +10,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-This project is licensed under:
-
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the [MIT license](https://choosealicense.com/licenses/mit/)
