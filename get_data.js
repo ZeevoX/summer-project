@@ -55,7 +55,7 @@ if (pressure < low_pressure) {
 } else if (pressure > high_pressure) {
   condition = 6;
 } else {
-  condition = (pressure - low_pressure) / (high_pressure - low_pressure) * conditions.length;
+  condition = (pressure - low_pressure) / (high_pressure - low_pressure) * (conditions.length - 1);
 }
 
 genie.innerHTML = "The weather genie says that it is currently " + conditions[roundnum(condition, 0)];
