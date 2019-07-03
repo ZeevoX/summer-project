@@ -16,14 +16,14 @@ function populate(name, v, u, t, row) {
   cell4.innerHTML = time.toLocaleDateString() + " " + time.toLocaleTimeString(undefined, { timeZoneName: 'short', hour: '2-digit', minute:'2-digit' });
 }
 
-function onedp(s) {
-  return parseFloat(s).toFixed(1);
+function roundnum(s, places) {
+  return parseFloat(s).toFixed(places);
 }
 
 function createTable(table, d) {
-  populate("Current",  onedp(d["v"]),  d["u"],  d["t"], table.insertRow(-1));
-  populate("Maximum",  onedp(d["max"]),  d["u"],  d["maxt"], table.insertRow(-1));
-  populate("Minimum",  onedp(d["min"]),  d["u"],  d["mint"], table.insertRow(-1));
+  populate("Current",  roundnum(d["v"], 1),  d["u"],  d["t"], table.insertRow(-1));
+  populate("Maximum",  roundnum(d["max"], 1),  d["u"],  d["maxt"], table.insertRow(-1));
+  populate("Minimum",  roundnum(d["min"], 1),  d["u"],  d["mint"], table.insertRow(-1));
 }
 
 createTable(document.getElementById("temperature_table"), data["temp"]);
@@ -34,12 +34,28 @@ let genie = document.getElementById("weather_genie");
 var weather = "unknown";
 let pressure = data["pressure"]["v"];
 
-if (pressure > 1009.144 && pressure < 1022.689) {
-    weather = "partly cloudy 🌤️⛅🌥️";
-} else if (pressure > 1022.689) {
-    weather = "sunny ☀️";
-} else if (pressure < 1009.144) {
-    weather = "stormy ⛈️";
+conditions = [
+  "stormy ⛈️",
+  "heavy rain 🌧️",
+  "showers 🌦️",
+  "cloudy ☁️",
+  "mostly cloudy ⛅",
+  "partly cloudy ⛅",
+  "mostly sunny 🌤️",
+  "sunny ☀️"
+]
+
+console.log(conditions);
+
+const low_pressure = 1000;
+const high_pressure = 1030;
+
+if (pressure < low_pressure) {
+  condition = 0;
+} else if (pressure > high_pressure) {
+  condition = 6;
+} else {
+  condition = (pressure - low_pressure) / (high_pressure - low_pressure) * conditions.length;
 }
 
-genie.innerHTML = "The weather genie says that it is currently " + weather;
+genie.innerHTML = "The weather genie says that it is currently " + conditions[roundnum(condition, 0)];
