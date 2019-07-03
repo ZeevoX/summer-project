@@ -28,14 +28,14 @@
                 <h1>Temperature</h1>
             </div>
             <div class="data light-mode">
-                <div id="content">
-                    Maximum: <div id="value1" style="display: inline-block;">70</div>
-                    <div id="units1" style="display: inline-block;">mm</div>
-                    <br>
-                    Minimum: <div id="value2" style="display: inline-block;">1</div>
-                    <div id="units2" style="display: inline-block;">mm</div>
-                </div>
-                <h3>Graphs</h3>
+                <table id="temperature_table">
+                    <tr>
+                        <th> </th>
+                        <th>Value</th>
+                        <th>Units</th>
+                        <th>Time</th>
+                    </tr>
+                </table>
             </div>
         </section>
         <section class="card light-mode" id="humidity">
@@ -44,14 +44,14 @@
                 <h1>Humidity</h1>
             </div>
             <div class="data light-mode">
-                <div id="content">
-                    Maximum: <div id="value1" style="display: inline-block;">70</div>
-                    <div id="units1" style="display: inline-block;">mm</div>
-                    <br>
-                    Minimum: <div id="value2" style="display: inline-block;">1</div>
-                    <div id="units2" style="display: inline-block;">mm</div>
-                </div>
-                <h3>Graphs</h3>
+              <table id="humidity_table">
+                  <tr>
+                      <th> </th>
+                      <th>Value</th>
+                      <th>Units</th>
+                      <th>Time</th>
+                  </tr>
+              </table>
             </div>
         </section>
         <section class="card light-mode" id="pressure">
@@ -59,14 +59,15 @@
                 <h1>Pressure</h1>
             </div>
             <div class="data light-mode">
-                <div id="content">
-                    Maximum: <div id="value1" style="display: inline-block;">70</div>
-                    <div id="units1" style="display: inline-block;">mm</div>
-                    <br>
-                    Minimum: <div id="value2" style="display: inline-block;">1</div>
-                    <div id="units2" style="display: inline-block;">mm</div>
-                </div>
-                <h3>Graphs</h3>
+              <table id="pressure_table">
+                  <tr>
+                      <th> </th>
+                      <th>Value</th>
+                      <th>Units</th>
+                      <th>Time</th>
+                  </tr>
+              </table>
+              <p id="weather_genie"></p>
             </div>
         </section>
         <footer class="light-mode card">
@@ -75,15 +76,6 @@
             </p>
         </footer>
         <script src="dark_mode.js"></script>
-        <script>
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET", "https://zeevox.net/summer-project/server/current.php", false);
-            xmlHttp.send(null);
-            let data = JSON.parse(xmlHttp.responseText);
-            document.getElementById("value1").innerHTML = data["temp1"]["v"];
-            document.getElementById("value2").innerHTML = data["fan1"]["v"];
-            document.getElementById("units1").innerHTML = data["temp1"]["u"];
-            document.getElementById("units2").innerHTML = data["fan1"]["u"];
-        </script>
+        <script src="get_data.js"></script>
     </body>
 </html>

@@ -173,6 +173,14 @@ section:after {
   clear: both;
 }
 
+table {
+  border-spacing: 5px;
+}
+
+th, td {
+  padding: 5px;
+}
+
 footer {
   float: right;
   border-radius: 16px 16px 16px 16px;
@@ -237,6 +245,6 @@ section, footer {
   }
 }
 
-.value, .units {
+.value, .units, .time {
   display: inline-block;
 }
